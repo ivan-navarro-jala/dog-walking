@@ -20,22 +20,25 @@ namespace DogWalkingWinApp.Repositories
 
         public void Add(DogWalk dogWalk)
         {
-            throw new NotImplementedException();
+            _context.DogWalks.Add(dogWalk);
+            _context.SaveChanges();
         }
 
         public void Delete(DogWalk dogWalk)
         {
-            throw new NotImplementedException();
+            _context.DogWalks.Remove(dogWalk);
+            _context.SaveChanges();
         }
 
         public List<DogWalk> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.DogWalks.ToList();
         }
 
         public void Update(DogWalk dogWalk)
         {
-            throw new NotImplementedException();
+            _context.DogWalks.Update(dogWalk);
+            _context.SaveChanges();
         }
     }
 }

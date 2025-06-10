@@ -6,7 +6,7 @@ namespace DogWalkingWinApp.Data
 {
     public class DogWalkingDbContext : DbContext
     {
-        public DbSet<DogWalk> Clients { get; set; }
+        public DbSet<DogWalk> DogWalks { get; set; }
 
         public DogWalkingDbContext(DbContextOptions<DogWalkingDbContext> options) : base(options) { }
     }
