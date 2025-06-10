@@ -1,5 +1,6 @@
 ﻿using DogWalkingWinApp.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace DogWalkingWinApp.Data
 {
@@ -7,9 +8,6 @@ namespace DogWalkingWinApp.Data
     {
         public DbSet<DogWalk> Clients { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DogWaling;Trusted_Connection=True;");
-        }
+        public DogWalkingDbContext(DbContextOptions<DogWalkingDbContext> options) : base(options) { }
     }
 }
