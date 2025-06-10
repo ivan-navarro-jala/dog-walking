@@ -1,3 +1,10 @@
+using DogWalkingWinApp.Data;
+using DogWalkingWinApp.ViewModel;
+using DogWalkingWinApp.Views;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+
 namespace DogWalkingWinApp
 {
     internal static class Program
@@ -8,10 +15,19 @@ namespace DogWalkingWinApp
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            var services = new ServiceCollection();
+
+            services.AddDbContext<DogWalkingDbContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ClientDI;Trusted_Connection=True;"));
+
+            services.AddSingleton<IDogWalkView, CtrlDogWalk>();
+            services.AddScoped<FormDogWalks>();
+
+            using var serviceProvider = services.BuildServiceProvider();
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormDogWalks());
+            var mainForm = serviceProvider.GetRequiredService<FormDogWalks>();
+            Application.Run(mainForm);
         }
     }
 }
