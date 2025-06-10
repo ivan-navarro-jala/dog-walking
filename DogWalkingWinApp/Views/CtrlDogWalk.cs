@@ -17,5 +17,15 @@ namespace DogWalkingWinApp.Views
         {
             InitializeComponent();
         }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void New()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

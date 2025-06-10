@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DogWalkingWinApp.Data;
+using DogWalkingWinApp.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +10,28 @@ namespace DogWalkingWinApp.ViewModel
 {
     public class DogWalkController : IDogWalkController
     {
+        private IDogWalkView _walkView;
+        private IDogWalkListView _listView;
+        private IDogWalkRepository _repository;
+        public DogWalkController(IDogWalkView walkView, IDogWalkListView listView, IDogWalkRepository repository) 
+        { 
+            _walkView = walkView;
+            _listView = listView;
+            _repository = repository;
+        }
         public void Delete()
         {
-            throw new NotImplementedException();
+            _walkView.Delete();
         }
 
         public void New()
         {
-            throw new NotImplementedException();
+            _walkView.New();
         }
 
         public void Search(SearchCriteria query)
         {
-            throw new NotImplementedException();
+            _listView.Show(_repository.Search(query));
         }
     }
 }

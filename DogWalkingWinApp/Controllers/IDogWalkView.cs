@@ -8,5 +8,7 @@ namespace DogWalkingWinApp.ViewModel
 {
     public interface IDogWalkView
     {
+        void Delete();
+        void New();
     }
 }

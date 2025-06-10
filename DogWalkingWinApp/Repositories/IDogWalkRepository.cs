@@ -8,5 +8,7 @@ namespace DogWalkingWinApp.Repositories
         void Add(DogWalk dogWalk);
         void Update(DogWalk dogWalk);
         void Delete(DogWalk dogWalk);
+        List<DogWalk> Search(SearchCriteria query);
+        
     }
 }

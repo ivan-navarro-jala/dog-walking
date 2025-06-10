@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DogWalkingWinApp.ViewModel
+namespace DogWalkingWinApp.Repositories
 {
-   public record SearchCriteria(string ClientName, string DogName);
+    public record SearchCriteria(string ClientName, string DogName);
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DogWalkingWinApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DogWalkingWinApp.ViewModel
 {
-    internal interface IDogWalkListView
+    public interface IDogWalkListView
     {
+        void Show(List<DogWalk> dogWalks);
     }
 }

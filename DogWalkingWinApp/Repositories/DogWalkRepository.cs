@@ -40,5 +40,24 @@ namespace DogWalkingWinApp.Repositories
             _context.DogWalks.Update(dogWalk);
             _context.SaveChanges();
         }
+
+        public List<DogWalk> Search(SearchCriteria query)
+        {
+            var queryResult = _context.DogWalks.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(query.ClientName))
+            {
+                queryResult = queryResult.Where(c => c.ClientName.Contains(query.ClientName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(query.DogName))
+            {
+                queryResult = queryResult.Where(c => c.DogName.Contains(query.DogName));
+            }
+
+            var result = queryResult.ToList();
+
+            return result;
+        }
     }
 }
