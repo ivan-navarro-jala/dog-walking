@@ -10,5 +10,6 @@ namespace DogWalkingWinApp.ViewModel
     {
         void Delete();
         void New();
+        void Save();
     }
 }

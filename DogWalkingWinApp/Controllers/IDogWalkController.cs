@@ -15,6 +15,7 @@ namespace DogWalkingWinApp.ViewModel
         void Delete();
         
         void Search(SearchCriteria query);
-
+        void Show();
+        void Save();
     }
 }

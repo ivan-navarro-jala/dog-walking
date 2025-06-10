@@ -8,6 +8,7 @@ namespace DogWalkingWinApp.Models
 {
     public class DogWalk
     {
+        public int Id { get; set; }
         public string ClientName { get; set; }
         public string Phone { get; set; }
         public string DogName { get; set; }

@@ -63,6 +63,7 @@
             _btnNew.Size = new Size(35, 22);
             _btnNew.Text = "New";
             _btnNew.TextImageRelation = TextImageRelation.TextAboveImage;
+            _btnNew.Click += _btnNew_Click;
             // 
             // _btnSave
             // 
@@ -72,6 +73,7 @@
             _btnSave.Name = "_btnSave";
             _btnSave.Size = new Size(35, 22);
             _btnSave.Text = "Save";
+            _btnSave.Click += _btnSave_Click;
             // 
             // _btnDelete
             // 
@@ -155,6 +157,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dog Walks";
             WindowState = FormWindowState.Maximized;
+            Load += FormDogWalks_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);

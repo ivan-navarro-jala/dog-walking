@@ -33,5 +33,15 @@ namespace DogWalkingWinApp.ViewModel
         {
             _listView.Show(_repository.Search(query));
         }
+
+        public void Show()
+        {
+            _listView.Show(_repository.GetAll());
+        }
+
+        public void Save()
+        {
+            _walkView.Save();
+        }
     }
 }

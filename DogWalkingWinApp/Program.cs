@@ -1,4 +1,5 @@
 using DogWalkingWinApp.Data;
+using DogWalkingWinApp.Repositories;
 using DogWalkingWinApp.ViewModel;
 using DogWalkingWinApp.Views;
 using Microsoft.EntityFrameworkCore;
@@ -18,9 +19,12 @@ namespace DogWalkingWinApp
             var services = new ServiceCollection();
 
             services.AddDbContext<DogWalkingDbContext>(options =>
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ClientDI;Trusted_Connection=True;"));
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DogWalkDB;Trusted_Connection=True;"));
 
             services.AddSingleton<IDogWalkView, CtrlDogWalk>();
+            services.AddSingleton<IDogWalkListView, CtrlDogWalkList>();
+            services.AddSingleton<IDogWalkController, DogWalkController>();
+            services.AddSingleton<IDogWalkRepository, DogWalkRepository>();
             services.AddScoped<FormDogWalks>();
 
             using var serviceProvider = services.BuildServiceProvider();

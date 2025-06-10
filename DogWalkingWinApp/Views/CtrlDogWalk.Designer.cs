@@ -245,6 +245,7 @@
             _dtpTime.Format = DateTimePickerFormat.Custom;
             _dtpTime.Location = new Point(251, 22);
             _dtpTime.Name = "_dtpTime";
+            _dtpTime.ShowUpDown = true;
             _dtpTime.Size = new Size(72, 23);
             _dtpTime.TabIndex = 17;
             // 
