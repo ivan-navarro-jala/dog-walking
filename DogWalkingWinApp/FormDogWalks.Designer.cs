@@ -35,9 +35,9 @@
             _btnDelete = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             toolStripLabel1 = new ToolStripLabel();
-            toolStripTextBox1 = new ToolStripTextBox();
+            _txtClientName = new ToolStripTextBox();
             toolStripLabel2 = new ToolStripLabel();
-            toolStripTextBox2 = new ToolStripTextBox();
+            _txtDogName = new ToolStripTextBox();
             _btnSearch = new ToolStripButton();
             _btnClearSearch = new ToolStripButton();
             _pnlBottom = new Panel();
@@ -47,7 +47,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { _btnNew, _btnSave, _btnDelete, toolStripSeparator1, toolStripLabel1, toolStripTextBox1, toolStripLabel2, toolStripTextBox2, _btnSearch, _btnClearSearch });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { _btnNew, _btnSave, _btnDelete, toolStripSeparator1, toolStripLabel1, _txtClientName, toolStripLabel2, _txtDogName, _btnSearch, _btnClearSearch });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 25);
@@ -95,10 +95,10 @@
             toolStripLabel1.Size = new Size(76, 22);
             toolStripLabel1.Text = "Client Name:";
             // 
-            // toolStripTextBox1
+            // _txtClientName
             // 
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 25);
+            _txtClientName.Name = "_txtClientName";
+            _txtClientName.Size = new Size(100, 25);
             // 
             // toolStripLabel2
             // 
@@ -106,10 +106,10 @@
             toolStripLabel2.Size = new Size(64, 22);
             toolStripLabel2.Text = "Dog Name";
             // 
-            // toolStripTextBox2
+            // _txtDogName
             // 
-            toolStripTextBox2.Name = "toolStripTextBox2";
-            toolStripTextBox2.Size = new Size(100, 25);
+            _txtDogName.Name = "_txtDogName";
+            _txtDogName.Size = new Size(100, 25);
             // 
             // _btnSearch
             // 
@@ -119,6 +119,7 @@
             _btnSearch.Name = "_btnSearch";
             _btnSearch.Size = new Size(46, 22);
             _btnSearch.Text = "Search";
+            _btnSearch.Click += _btnSearch_Click;
             // 
             // _btnClearSearch
             // 
@@ -128,6 +129,7 @@
             _btnClearSearch.Name = "_btnClearSearch";
             _btnClearSearch.Size = new Size(76, 22);
             _btnClearSearch.Text = "Clear Search";
+            _btnClearSearch.Click += _btnClearSearch_Click;
             // 
             // _pnlBottom
             // 
@@ -172,9 +174,9 @@
         private ToolStripButton _btnDelete;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel toolStripLabel1;
-        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripTextBox _txtClientName;
         private ToolStripLabel toolStripLabel2;
-        private ToolStripTextBox toolStripTextBox2;
+        private ToolStripTextBox _txtDogName;
         private ToolStripButton _btnSearch;
         private ToolStripButton _btnClearSearch;
         private Panel _pnlBottom;

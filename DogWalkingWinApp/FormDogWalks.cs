@@ -28,5 +28,16 @@ namespace DogWalkingWinApp
         {
             _controller.Save();
         }
+
+        private void _btnSearch_Click(object sender, EventArgs e)
+        {
+            _controller.Search(new Repositories.SearchCriteria(_txtClientName.Text, _txtDogName.Text));
+        }
+
+        private void _btnClearSearch_Click(object sender, EventArgs e)
+        {
+            _txtDogName.Text = _txtClientName.Text = string.Empty;
+            _btnSearch.PerformClick();
+        }
     }
 }
