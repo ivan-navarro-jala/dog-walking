@@ -17,6 +17,8 @@ namespace DogWalkingWinApp.Views
     {
         DogWalk _dogWalk;
         IDogWalkRepository _dogWalkRepository;
+        public event EventHandler<DogWalk> DogWalkSaved;
+
         public CtrlDogWalk(IDogWalkRepository dogWalkRepository)
         {
             InitializeComponent();
@@ -60,14 +62,20 @@ namespace DogWalkingWinApp.Views
             _dogWalk.DateAndTime = _dtpDate.Value.Date.Add(_dtpTime.Value.TimeOfDay);
             _dogWalk.DurationInMinutes = (int)_numDuration.Value;
 
-            if (_dogWalk.Id == 0)
+            try
             {
-                _dogWalkRepository.Add(_dogWalk);
+                if (_dogWalk.Id == 0)
+                {
+                    _dogWalkRepository.Add(_dogWalk);
+                }
+                else
+                {
+                    _dogWalkRepository.Update(_dogWalk);
+                }
+
+                DogWalkSaved(this, _dogWalk);
             }
-            else
-            {
-                _dogWalkRepository.Update(_dogWalk);
-            }
+            catch { }
         }
 
         public void Edit(DogWalk dogWalk)

@@ -20,6 +20,12 @@ namespace DogWalkingWinApp.ViewModel
             _repository = repository;
 
             _listView.DogWalkSelected += _listView_DogWalkSelected;
+            _walkView.DogWalkSaved += _walkView_DogWalkSaved;
+        }
+
+        private void _walkView_DogWalkSaved(object? sender, Models.DogWalk e)
+        {
+            Show();
         }
 
         private void _listView_DogWalkSelected(object? sender, Models.DogWalk e)
