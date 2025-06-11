@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             _txtClientName = new TextBox();
             label2 = new Label();
@@ -49,11 +50,13 @@
             groupBox3 = new GroupBox();
             _dtpTime = new DateTimePicker();
             label9 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)_numAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_numDuration).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -258,6 +261,10 @@
             label9.TabIndex = 16;
             label9.Text = "Time:";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // CtrlDogWalk
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -275,6 +282,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -301,5 +309,6 @@
         private GroupBox groupBox3;
         private DateTimePicker _dtpTime;
         private Label label9;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -51,6 +51,11 @@ namespace DogWalkingWinApp.Views
 
         public void Save()
         {
+            if(!ValidateFields())
+            {  
+                return; 
+            }
+
             _dogWalk.ClientName = _txtClientName.Text;
             _dogWalk.Phone = _txtPhone.Text;
             _dogWalk.DogName = _txtDogName.Text;
@@ -76,6 +81,28 @@ namespace DogWalkingWinApp.Views
                 DogWalkSaved(this, _dogWalk);
             }
             catch { }
+        }
+
+        private bool ValidateFields()
+        {
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(_txtClientName.Text))
+            {
+                errorProvider1.SetError(_txtClientName, "Client Name is required. Please enter a valid name.");
+            }
+
+            if (string.IsNullOrWhiteSpace(_txtPhone.Text))
+            {
+                errorProvider1.SetError(_txtPhone, "Phone number is required. Please enter a valid one.");
+            }
+
+            if (string.IsNullOrWhiteSpace(_txtDogName.Text))
+            {
+                errorProvider1.SetError(_txtDogName, "Dog Name is required. Please enter a valid name.");
+            }
+
+            return !errorProvider1.HasErrors;
         }
 
         public void Edit(DogWalk dogWalk)
