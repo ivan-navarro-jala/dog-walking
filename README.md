@@ -31,6 +31,15 @@ A desktop application to manage dog walks and perform searches using Windows For
 
 ---
 
+### 🔐 Demo Credentials
+
+To log in with demo credentials, use:
+
+- **Username**: `sa`
+- **Password**: `$4`
+
+---
+
 ## 🧪 Testing
 
 Unit tests included for:

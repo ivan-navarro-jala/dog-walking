@@ -1,3 +1,4 @@
+using DogWalkingWinApp.Controllers;
 using DogWalkingWinApp.Data;
 using DogWalkingWinApp.Repositories;
 using DogWalkingWinApp.ViewModel;
@@ -25,6 +26,8 @@ namespace DogWalkingWinApp
             services.AddSingleton<IDogWalkListView, CtrlDogWalkList>();
             services.AddSingleton<IDogWalkController, DogWalkController>();
             services.AddSingleton<IDogWalkRepository, DogWalkRepository>();
+            services.AddSingleton<ILoginController, LoginController>();
+            services.AddScoped<LoginForm>();
             services.AddScoped<FormDogWalks>();
 
             using var serviceProvider = services.BuildServiceProvider();
