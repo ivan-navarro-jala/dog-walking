@@ -60,7 +60,31 @@ namespace DogWalkingWinApp.Views
             _dogWalk.DateAndTime = _dtpDate.Value.Date.Add(_dtpTime.Value.TimeOfDay);
             _dogWalk.DurationInMinutes = (int)_numDuration.Value;
 
-            _dogWalkRepository.Add(_dogWalk);
+            if (_dogWalk.Id == 0)
+            {
+                _dogWalkRepository.Add(_dogWalk);
+            }
+            else
+            {
+                _dogWalkRepository.Update(_dogWalk);
+            }
+        }
+
+        public void Edit(DogWalk dogWalk)
+        {
+            _dogWalk = dogWalk;
+            _txtClientName.Text = _dogWalk.ClientName;
+            _txtPhone.Text = _dogWalk.Phone;
+            _txtDogName.Text = _dogWalk.DogName;
+            _txtBreed.Text = _dogWalk.Breed;
+
+            _numAge.Value = _dogWalk.Age;
+            _cmbMonthsYears.SelectedItem = _dogWalk.AgeSufix;
+
+            _dtpDate.Value = _dogWalk.DateAndTime.Date;
+            _dtpTime.Value = _dogWalk.DateAndTime;
+
+            _numDuration.Value = _dogWalk.DurationInMinutes;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DogWalkingWinApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace DogWalkingWinApp.ViewModel
     public interface IDogWalkView
     {
         void Delete();
+        void Edit(DogWalk dogWalk);
         void New();
         void Save();
     }

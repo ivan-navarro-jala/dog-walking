@@ -14,6 +14,7 @@ namespace DogWalkingWinApp.Views
 {
     public partial class CtrlDogWalkList : UserControl, IDogWalkListView
     {
+        public event EventHandler<DogWalk> DogWalkSelected;
         public CtrlDogWalkList()
         {
             InitializeComponent();
@@ -22,6 +23,17 @@ namespace DogWalkingWinApp.Views
         public void Show(List<DogWalk> dogWalks)
         {
             _dgvDogWalks.DataSource = dogWalks;
+        }
+
+        private void _dgvDogWalks_SelectionChanged(object sender, EventArgs e)
+        {
+            if (_dgvDogWalks.SelectedRows.Count==0)
+            {
+                return;
+            }
+            var selectedDogWalk = _dgvDogWalks.SelectedRows[0].DataBoundItem as DogWalk;
+
+            DogWalkSelected(this, selectedDogWalk);
         }
     }
 }

@@ -44,6 +44,7 @@
             _dgvDogWalks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             _dgvDogWalks.Size = new Size(689, 400);
             _dgvDogWalks.TabIndex = 0;
+            _dgvDogWalks.SelectionChanged += _dgvDogWalks_SelectionChanged;
             // 
             // CtrlDogWalkList
             // 

@@ -10,5 +10,6 @@ namespace DogWalkingWinApp.ViewModel
     public interface IDogWalkListView
     {
         void Show(List<DogWalk> dogWalks);
+        event EventHandler<DogWalk> DogWalkSelected;
     }
 }

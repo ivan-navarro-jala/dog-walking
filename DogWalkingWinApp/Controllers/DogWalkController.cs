@@ -18,7 +18,15 @@ namespace DogWalkingWinApp.ViewModel
             _walkView = walkView;
             _listView = listView;
             _repository = repository;
+
+            _listView.DogWalkSelected += _listView_DogWalkSelected;
         }
+
+        private void _listView_DogWalkSelected(object? sender, Models.DogWalk e)
+        {
+            _walkView.Edit(e);
+        }
+
         public void Delete()
         {
             _walkView.Delete();
